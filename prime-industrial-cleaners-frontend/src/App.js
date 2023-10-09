@@ -1,24 +1,26 @@
 import React from 'react'
-// Pages Imports
+import { Routes, Route } from 'react-router-dom'
+// Components Imports
 import Footer from './components/Footer'
 import Header from './components/Header'
-// Components Imports
+
+// Pages Imports
+import NotFound from './pages/NotFound'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Home from './pages/Home'
-// Stles Imports
-import './styles/Footer.scss'
-import './styles/Header.scss'
-import './styles/AboutUs.scss'
-import './styles/ContactUs.scss'
-import './styles/Home.scss'
 import './styles/App.scss'
-import './App.css'
 
 const App = () => {
   return (
     <>
       <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="AboutUs" element={<AboutUs />} />
+        <Route path="ContactUs" element={<ContactUs />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Home />
       <AboutUs />
       <ContactUs />
